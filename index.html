@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet"> 
+        <title>Gallery</title>
+    </head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <body>
+    <div class="row">
+    <div class="column middle">
+        <video controls class=videoInsert id="v11" src="assets/filtered_vs_unfiltered.mp4"></video>
+        <p> This animation shows why data assimilation is essential. Without incorporating data into our dynamical models we can very easily go astray and have predictions that are far away from the truth. Here dist denotes the 2nd Wasserstein distance between the prdicted and the true filtering distributions.
+        </p>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <img controls class=videoInsert id="v11" src="assets/2DFP.png"></img>
+            <p>Steady state of a Fokker-Planck equation with drift that can be represented as the gradient of -(x<sup>2</sup>+y<sup>2</sup>-1)<sup>2</sup> ie with a circle attractor, learned with a physics informed neural net.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <img controls class=videoInsert id="v11" src="assets/L63steady.png" style="width: 50%;"></img>
+            <p>Steady state of a Fokker-Planck equation with drift that is given by the Lorenz 63 system, learned with a physics informed neural net. The right panels show the Monte-Carlo simulations.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <img controls class=videoInsert id="v11" src="assets/helicoid.png"></img>
+            <p>The helicoid, learned as the solution of the minimal surface PDE for a helix with a physics informed neural net where the boundary condition is satisfied with the augmented Lagrangian method.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <img controls class=videoInsert id="v11" src="assets/enneper.png"></img>
+            <p>A self-intersecting minimal surface called Enneper's surface learned as the solution to a variational problem with a physics informed neural net.</p>
+        </div>
+    </div>
+    </body>
+</html>
