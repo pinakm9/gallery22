@@ -6,7 +6,13 @@
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+          </script>
+          <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+          </script>
         <title>Gallery</title>
     </head>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
@@ -22,8 +28,15 @@
 
     <div class="row">
         <div class="column middle">
-            <img controls class=videoInsert id="v11" src="assets/2DFP.png"></img>
-            <p>Steady state of a Fokker-Planck equation with drift that can be represented as the gradient of -(x<sup>2</sup>+y<sup>2</sup>-1)<sup>2</sup> i.e. with a circle attractor, learned with a physics informed neural net.</p>
+            <video controls class=videoInsert id="v11" src="assets/learning_8.mp4"></video>
+            <p>An example of a network learning the steady state solution to a 2D Fokker-Planck equation with drift that can be represented as the gradient of $-(x^2+y^2-1)^2$ i.e. with a circle attractor.</p>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <img controls class=videoInsert id="v11" src="assets/learned_vs_truth_10D.png"></img>
+            <p>Steady state of a 10 dimensional Fokker-Planck equation with a 10 dimensional hypersphere attractor, learned with a physics informed neural net. In both panels $p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)$ has been normalized in a way such that $\iint_{\mathbb R^2}p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)\,dx\,dy=1$ .</p>
         </div>
     </div>
 
