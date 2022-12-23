@@ -20,29 +20,47 @@
     <div class="row">
     <div class="column middle">
         <video controls class=videoInsert id="v11" src="assets/filtered_vs_unfiltered.mp4"></video>
-        <p> This animation shows why data assimilation is essential. Without incorporating data into our dynamical models we can very easily go astray and have predictions that are far away from the truth. Here dist denotes the 2nd Wasserstein distance between the prdicted and the true filtering distributions. Two distributions in each panel originate from two different initial distributions, the left panel indicates that the filtering algorithm used here (particle filter) is stable because after a certain amount of time the filtering distrinutions become near-identical.  
+        <p> This animation shows why data assimilation is essential. Suppose we are observing state vector of the model 
+            $$x_{k+1} = f(x_k)$$
+            through some noisy, lower dimensional observations $y_k  = H x_k$ where $H$ is a projection matrix and $k$ denotes discrete time. And we have a guess for the distribution of $x_0$ which is represented by one of the starting blobs in the animation on both panels. But our guess might be far away from the true distribution of $x_0$ which is represented by the other starting blob. <br><br>
+            Even if our guess is incorrect we can consider all the observations up to current time and compute the distribution of the state vector given with appropriate filtering algorithms (particle filter in the left panel) and we see for both right and wrong initial guesses we soon arrive at the same and true state distribution. <br><br>  
+            However, without taking new observations into account we can see that our guess for the distribution of the state vector can quickly diverge from the true distribution if we start with a wrong guess (right panel).<br><br>
+            $f$ in this example is a forward map for the Lorenz 63 system. 
         </p>
     </div>
     </div>
 
     <div class="row">
         <div class="column middle">
-            <video controls class=videoInsert id="v11" src="assets/learning_8.mp4"></video>
-            <p>This animation shows a network learning the steady state solution to a 2D Fokker-Planck equation with drift that can be represented as the gradient of $-(x^2+y^2-1)^2$ i.e. with a circle attractor.</p>
+            <video controls class=videoInsert id="v11" src="assets/learning.mp4"></video>
+            <p>This animation shows a network learning the steady state solution to a 2D Fokker-Planck equation given by 
+                $$\frac{\partial p}{\partial t} = \nabla\cdot(p\nabla V ) + \frac{\sigma^2}{2}\Delta p$$ where $V=(x^2+y^2-1)^2$.
+            </p>
     </div>
     </div>
 
     <div class="row">
         <div class="column middle">
             <img controls class=videoInsert id="v11" src="assets/learned_vs_truth_10D.png"></img>
-            <p>Steady state of a 10 dimensional Fokker-Planck equation with a 10 dimensional hypersphere attractor, learned with a physics informed neural net. In both panels $p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)$ has been normalized in a way such that $\iint_{\mathbb R^2}p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)\,dx\,dy=1$ .</p>
+            <p>Steady state solution of a 10 dimensional Fokker-Planck equation given by
+                $$\frac{\partial p}{\partial t} = \nabla\cdot(p\nabla V ) + \frac{\sigma^2}{2}\Delta p$$ where $V=\sum_{i=0}^4(x_{2i}^2+x_{2i+1}^2-1)^2$,
+                learned with a physics informed neural net. In both panels $p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)$ has been normalized in a way such that $\iint_{\mathbb R^2}p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)\,dx\,dy=1$ .</p>
         </div>
     </div>
 
     <div class="row">
         <div class="column middle">
-            <img controls class=videoInsert id="v11" src="assets/L63steady.png" style="width: 50%;"></img>
-            <p>Steady state of a Fokker-Planck equation with drift that is given by the Lorenz 63 system, learned with a physics informed neural net. The right panels show the Monte-Carlo simulations.</p>
+            <video controls class=videoInsert id="v11" src="assets/Thomas-learning.mp4"></video>
+            <p>A network learning the steady state of a Fokker-Planck equation with drift that is given by the Thomas' cyclically symmetric system i.e.
+                $$\frac{\partial p}{\partial t} = -\nabla\cdot(p\mu ) + \frac{\sigma^2}{2}\Delta p$$ where $\mu=(\sin y-bx,\, \sin z- by,\, \sin x - bz)^\top$, learned with a physics informed neural net. The right panels show the Monte-Carlo simulations.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <video controls class=videoInsert id="v11" src="assets/L63-learning.mp4"></video>
+            <p>A network learning the steady state of a Fokker-Planck equation with drift that is given by the Lorenz 63 system i.e.
+                $$\frac{\partial p}{\partial t} = -\nabla\cdot(p\mu) + \frac{\sigma^2}{2}\Delta p$$ where $\mu=(\alpha(y-x),\, x(\rho - z)- y,\, xy - \beta z)^\top$, learned with a physics informed neural net. The right panels show the Monte-Carlo simulations.</p>
         </div>
     </div>
 
