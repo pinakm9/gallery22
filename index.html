@@ -25,7 +25,7 @@
             through some noisy, lower dimensional observations $y_k  = H x_k + \eta_k$ where $H$ is a projection matrix, $\eta_k$ is an additive noise and $k$ denotes discrete time. And we have a guess for the distribution of $x_0$ which is represented by one of the starting blobs in the animation on both panels. But our guess might be far away from the true distribution of $x_0$ which is represented by the other starting blob. <br><br>
             Even if our guess is incorrect, we can consider all the observations up to current time and compute the distribution of the state vector given with appropriate filtering algorithms (particle filter in the left panel) and we see for both right and wrong initial guesses we soon arrive at the same and true state distribution. <br><br>  
             However, without taking new observations into account we can see that our guess for the distribution of the state vector can quickly diverge from the true distribution if we start with a wrong guess (right panel).<br><br>
-            $f$ in this example is a forward map for the Lorenz 63 system. 
+            $f$ in this example is a forward map for the Lorenz 63 system. And "dist" refers to the second Wasserstein distance between the blobs.
         </p>
     </div>
     </div>
