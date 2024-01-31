@@ -15,7 +15,7 @@
   .section{
       border:2px solid darkslategrey;
       border-radius: 5px;
-      background-color: pink;
+      background-color: rgb(86, 86, 86);
       margin-bottom: 30px;
       width: 70%;
       height: 100%;
@@ -23,7 +23,7 @@
       left: 15%;
       float: center;
       display: flex;
-
+      color: white;
   }
 
 
