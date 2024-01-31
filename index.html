@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+          </script>
+          <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
+        <title>Gallery</title>
+    </head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <body>
+        <div class="section">
+            <div class="column middle">
+                <p>The following is an example of data assimilation where we try to make a guess about the state of a dynanical system from often noisy and incomplete observations. 
+                    As it can be seen below, it is essential to constantly update our knowledge of the state with observations since otherwise we might very quickly lose sight of reality.
+                </p>
+            </div>
+        </div>
+    <div class="row">
+    <div class="column middle">
+        <video controls class=videoInsert id="v11" src="assets/filtered_vs_unfiltered.mp4"></video>
+        <p> Suppose we are observing state vector of the model 
+            $$x_{k+1} = f(x_k)$$
+            through some noisy, lower dimensional observations $y_k  = H x_k + \eta_k$ where $H$ is a projection matrix, $\eta_k$ is an additive noise and $k$ denotes discrete time. And even though we don't know where the system started at i.e. $x_0$, we have a probabilistic guess for $x_0$ i.e. we represent our guess as $p(x_0)$ which is shown by one of the starting blobs in the animation on both panels. But our guess might be far away from the true $x_0$ which is represented by the other starting blob. <br><br>
+            Even if our guess is incorrect, we can consider all the observations up to current time and compute the distribution of the state vector using appropriate filtering algorithms (particle filter in the left panel) and we see for both right and wrong initial guesses we soon arrive at the same and true state distribution. <br><br>  
+            However, without taking new observations into account we can see that our guess for the distribution of the state vector can quickly diverge from the true distribution if we start with a wrong guess (right panel).<br><br>
+            $f$ in this example is a forward map for the Lorenz 63 system. And "dist" refers to the second Wasserstein distance (a metric on the space of probability measures) between the blobs.
+        </p>
+    </div>
+    </div>
+
+    <div class="section">
+        <div class="column middle">
+            <p>The following are examples of Fokker-Planck equations of the form, 
+                $$-\nabla\cdot(\mu p) + \frac{\sigma^2}{2}\Delta p=0$$
+                being solved with deep learning. Deep learning does not require traditional meshes and as a result we can solve equations in dimensions that are challenging for classical methods, in a functional form. The dimensions range from 2 to 10 in these examples.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <video controls class=videoInsert id="v11" src="assets/learning.mp4"></video>
+            <p>This animation shows a network learning the steady state solution to a 2D Fokker-Planck equation with
+                $$\mu = -\nabla (x^2+y^2-1)^2$$
+            </p>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <img controls class=videoInsert id="v11" src="assets/learned_vs_truth_10D.png"></img>
+            <p>Steady state solution of a 10 dimensional Fokker-Planck equation given by
+                $$\mu=-\nabla\sum_{i=0}^4(x_{2i}^2+x_{2i+1}^2-1)^2$$
+                learned with a physics informed neural net. In both panels $p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)$ has been normalized in a way such that $\iint_{\mathbb R^2}p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)\,dx\,dy=1$ for easier visualization.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <video controls class=videoInsert id="v11" src="assets/Thomas-learning.mp4"></video>
+            <p>A network learning the steady state of a Fokker-Planck equation with drift that is given by the Thomas' cyclically symmetric system i.e.
+                $$\mu=(\sin y-bx,\, \sin z- by,\, \sin x - bz)^\top$$ The right panels show the Monte-Carlo simulations.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <video controls class=videoInsert id="v11" src="assets/L63-learning.mp4"></video>
+            <p>A network learning the steady state of a Fokker-Planck equation with drift that is given by the Lorenz 63 system i.e.
+                $$\mu=(\alpha(y-x),\, x(\rho - z)- y,\, xy - \beta z)^\top$$ The right panels show the Monte-Carlo simulations.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="column middle">
+            <p>The following are examples of constrained optimization problems of the simple form, 
+                $$\begin{aligned}\underset{u\in X}{\rm arginf} \;&f(u)\\{\rm subject\;to}\;&g(u)=0\end{aligned}$$
+                where $f:X\to\mathbb R,\;g: X\to W$ and $X, W$ are Hilbert spaces and $X$ is infinite dimensional and $W$ is either finite or infinite dimensional.
+                When $X$ is finite dimensional two popular methods for solving such problems are penalty and augmented Lagrangian algorithms. Below we can see their infinite 
+                dimensional analogues in a deep learning setting.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <video controls class=videoInsert id="v11" src="assets/helicoid-evol.mp4"></video>
+            <p>The helicoid, learned as a minimizer of an area integral with physics informed neural nets using two different constrained optimization techniques. Here the constraint 
+                $g$ is given by the boundary condition.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column middle">
+            <video controls class=videoInsert id="v11" src="assets/Beltrami-evol.mp4"></video>
+            <p>A Beltrami field, learned as a minimizer of an energy integral with appropriate boundary conditions using two different constrained optimization techniques.</p>
+        </div>
+    </div>
+
+    </body>
+</html>
