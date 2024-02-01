@@ -23,7 +23,16 @@
         <div class="section">
             <div class="column middle">
                 <p>The following is an example of data assimilation where we try to make a guess about the state of a dynanical system from often noisy and incomplete observations. 
-                    As it can be seen below, it is essential to constantly update our knowledge of the state with observations since otherwise we might very quickly lose sight of reality.
+                    As it can be seen below, it is essential to constantly update our knowledge of the state with observations since otherwise we might very quickly lose sight of reality. My work on stability of filtering algorithms can 
+                    be found at, 
+                    <ul>
+                        <li>
+                          <a href="https://pinakm9.github.io/files/20210526_numerical_filter_stability_PM_SR_AA.pdf">“Stability of nonlinear filters-numerical explorations of particle and ensemble Kalman filters”.</a>
+                        </li>
+                        <li>
+                          <a href="https://arxiv.org/pdf/2208.10810.pdf">“Probing robustness of nonlinear filter stability numerically using Sinkhorn divergence”.</a>
+                        </li>
+                    </ul>
                 </p>
             </div>
         </div>
@@ -44,7 +53,15 @@
         <div class="column middle">
             <p>The following are examples of Fokker-Planck equations of the form, 
                 $$-\nabla\cdot(\mu p) + \frac{\sigma^2}{2}\Delta p=0$$
-                being solved with deep learning. Deep learning does not require traditional meshes and as a result we can solve equations in dimensions that are challenging for classical methods, in a functional form. The dimensions range from 2 to 10 in these examples.
+                being solved with deep learning. Deep learning does not require traditional meshes and as a result we can solve equations in dimensions that are challenging for classical methods, in a functional form. The dimensions range from 2 to 10 in these examples.  My work on solving high dimensional Fokker-Planck equations, both stationary and time-dependent, can be found at, 
+                <ul>
+                    <li>
+                      <a href="https://arxiv.org/pdf/2306.07068.pdf">“Learning zeros of Fokker-Planck operators”.</a>
+                    </li>
+                    <li>
+                      <a href="https://arxiv.org/pdf/2401.01292.pdf">“Solving Fokker-Planck equations using the zeros of Fokker-Planck operators and the Feynman-Kac formula”.</a>
+                    </li>
+                </ul>
             </p>
         </div>
     </div>
@@ -89,7 +106,12 @@
                 $$\begin{aligned}\underset{u\in X}{\rm arginf} \;&f(u)\\{\rm subject\;to}\;&g(u)=0\end{aligned}$$
                 where $f:X\to\mathbb R,\;g: X\to W$ and $X, W$ are Hilbert spaces and $X$ is infinite dimensional and $W$ is either finite or infinite dimensional.
                 When $X$ is finite dimensional two popular methods for solving such problems are penalty and augmented Lagrangian algorithms. Below we can see their infinite 
-                dimensional analogues in a deep learning setting.
+                dimensional analogues in a deep learning setting. My explorations of this topic can be found at, 
+                <ul>
+                    <li>
+                        <a href="https://arxiv.org/pdf/2401.01306.pdf">“Learning solutions to some toy constrained optimization problems in infinite dimensional Hilbert spaces”.</a>
+                    </li>
+                </ul>
             </p>
         </div>
     </div>
