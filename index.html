@@ -20,25 +20,71 @@
         <div class = "row">
         <h4>A few visual examples from my projects</h4>
         </div>
+      
         <div class="section">
-            <div class="column middle">
+            <div class="column single">
+                <p>The following are examples of unlearning in generative models via loss gradient orthogonalization (UNO-S). My work on this topic can be found at:
+                    <ul>
+                        <li><a href="https://arxiv.org/pdf/2506.04712">“UNO: Unlearning via Orthogonalization in Generative models”</a></li>
+                    </ul></p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="column half">
+            <video controls class="videoInsert" src="assets/UNO/mnist_s.mp4"></video>
+            <p>This animation shows unlearning the digit "1" in a generative model.
+            </p>
+        </div>
+        <div class="space5"></div>
+        <div class="column half">
+            <video controls class="videoInsert" src="assets/UNO/celeba-os.mp4"></video>
+            <p>This animation shows unlearning the male faces in a generative model.
+            </p>
+        </div>
+        </div>
+
+          <div class="section">
+            <div class="column single">
+                <p>The following are examples of forecasting chaotic systems with lightweight random feature surrogate models. My work on this topic can be found at:
+                    <ul>
+                        <li><a href="https://arxiv.org/pdf/2501.06661">“Learning dynamical systems with hit-and-run random feature maps” <br>(Nature Communications 2025)</a></li>
+                        <li><a href="https://arxiv.org/pdf/2408.03626">“On the choice of the non-trainable internal weights in random feature maps for forecasting chaotic dynamical systems” <br>(Foundations of Data Science 2025)</a></li>
+                    </ul></p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="column half">
+            <img class="videoInsert" src="assets/DeepRFM/Architecture.png"></img>
+            <p>Deep and local varaints of random feature maps.
+            </p>
+        </div>
+        <div class="space1"></div>
+        <div class="column half">
+            <img class="videoInsert" src="assets/DeepRFM/Short-term.png"></img>
+            <p>Forecasting skill of random feature surrogate models in terms of valid prediction time.
+            </p>
+        </div>
+        </div>
+
+        <div class="section">
+            <div class="column single">
                 <p>The following is an example of data assimilation where we try to make a guess about the state of a dynanical system from often noisy and incomplete observations. 
                     As it can be seen below, it is essential to constantly update our knowledge of the state with observations since otherwise we might very quickly lose sight of reality. My work on stability of filtering algorithms can 
-                    be found at, 
+                    be found at: 
                     <ul>
                         <li>
-                          <a href="https://pinakm9.github.io/files/20210526_numerical_filter_stability_PM_SR_AA.pdf">“Stability of nonlinear filters-numerical explorations of particle and ensemble Kalman filters”</a>
+                          <a href="https://arxiv.org/pdf/2208.10810.pdf">“Probing robustness of nonlinear filter stability numerically using Sinkhorn divergence” <br>(Physica D 2023)</a>
                         </li>
                         <li>
-                          <a href="https://arxiv.org/pdf/2208.10810.pdf">“Probing robustness of nonlinear filter stability numerically using Sinkhorn divergence”</a>
+                          <a href="https://pinakm9.github.io/files/20210526_numerical_filter_stability_PM_SR_AA.pdf">“Stability of nonlinear filters-numerical explorations of particle and ensemble Kalman filters” <br>(IEEE 2021)</a>
                         </li>
                     </ul>
                 </p>
             </div>
         </div>
     <div class="row">
-    <div class="column middle">
-        <video controls class=videoInsert id="v11" src="assets/filtered_vs_unfiltered.mp4"></video>
+    <div class="column single">
+        <video controls class=videoInsert src="assets/filtered_vs_unfiltered.mp4"></video>
         <p> Suppose we are observing state vector of the model 
             $$x_{k+1} = f(x_k)$$
             through some noisy, lower dimensional observations $y_k  = H x_k + \eta_k$ where $H$ is a projection matrix, $\eta_k$ is an additive noise and $k$ denotes discrete time. And even though we don't know where the system started at i.e. $x_0$, we have a probabilistic guess for $x_0$ i.e. we represent our guess as $p(x_0)$ which is shown by one of the starting blobs in the animation on both panels. But our guess might be far away from the true $x_0$ which is represented by the other starting blob. <br><br>
@@ -50,10 +96,10 @@
     </div>
 
     <div class="section">
-        <div class="column middle">
+        <div class="column single">
             <p>The following are examples of Fokker-Planck equations of the form, 
                 $$-\nabla\cdot(\mu p) + \frac{\sigma^2}{2}\Delta p=0$$
-                being solved with deep learning. Deep learning does not require traditional meshes and as a result we can solve equations in dimensions that are challenging for classical methods, in a functional form. The dimensions range from 2 to 10 in these examples.  My work on solving high dimensional Fokker-Planck equations, both stationary and time-dependent, can be found at, 
+                being solved with deep learning. Deep learning does not require traditional meshes and as a result we can solve equations in dimensions that are challenging for classical methods, in a functional form. The dimensions range from 2 to 10 in these examples.  My work on solving high dimensional Fokker-Planck equations, both stationary and time-dependent, can be found at: 
                 <ul>
                     <li>
                       <a href="https://arxiv.org/pdf/2306.07068.pdf">“Learning zeros of Fokker-Planck operators”</a>
@@ -67,8 +113,8 @@
     </div>
 
     <div class="row">
-        <div class="column middle">
-            <video controls class=videoInsert id="v11" src="assets/learning.mp4"></video>
+        <div class="column single">
+            <video controls height="50%" src="assets/learning.mp4"></video>
             <p>This animation shows a network learning the steady state solution to a 2D Fokker-Planck equation with
                 $$\mu = -\nabla (x^2+y^2-1)^2$$
             </p>
@@ -76,8 +122,8 @@
     </div>
 
     <div class="row">
-        <div class="column middle">
-            <img controls class=videoInsert id="v11" src="assets/learned_vs_truth_10D.png"></img>
+        <div class="column single">
+            <img controls width="80%" src="assets/learned_vs_truth_10D.png"></img>
             <p>Steady state solution of a 10 dimensional Fokker-Planck equation given by
                 $$\mu=-\nabla\sum_{i=0}^4(x_{2i}^2+x_{2i+1}^2-1)^2$$
                 learned with a physics informed neural net. In both panels $p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)$ has been normalized in a way such that $\iint_{\mathbb R^2}p_\infty(x, y, 0, 0, 0, 0, 0, 0, 0, 0)\,dx\,dy=1$ for easier visualization.</p>
@@ -85,28 +131,28 @@
     </div>
 
     <div class="row">
-        <div class="column middle">
-            <video controls class=videoInsert id="v11" src="assets/Thomas-learning.mp4"></video>
+        <div class="column single">
+            <video controls width="80%" src="assets/Thomas-learning.mp4"></video>
             <p>A network learning the steady state of a Fokker-Planck equation with drift that is given by the Thomas' cyclically symmetric system i.e.
                 $$\mu=(\sin y-bx,\, \sin z- by,\, \sin x - bz)^\top$$ The right panels show the Monte-Carlo simulations.</p>
         </div>
     </div>
 
     <div class="row">
-        <div class="column middle">
-            <video controls class=videoInsert id="v11" src="assets/L63-learning.mp4"></video>
+        <div class="column single">
+            <video controls width="80%" src="assets/L63-learning.mp4"></video>
             <p>A network learning the steady state of a Fokker-Planck equation with drift that is given by the Lorenz 63 system i.e.
                 $$\mu=(\alpha(y-x),\, x(\rho - z)- y,\, xy - \beta z)^\top$$ The right panels show the Monte-Carlo simulations.</p>
         </div>
     </div>
 
     <div class="section">
-        <div class="column middle">
+        <div class="column single">
             <p>The following are examples of constrained optimization problems of the simple form, 
                 $$\begin{aligned}\underset{u\in X}{\rm arginf} \;&f(u)\\{\rm subject\;to}\;&g(u)=0\end{aligned}$$
                 where $f:X\to\mathbb R,\;g: X\to W$ and $X, W$ are Hilbert spaces and $X$ is infinite dimensional and $W$ is either finite or infinite dimensional.
                 When $X$ is finite dimensional two popular methods for solving such problems are penalty and augmented Lagrangian algorithms. Below we can see their infinite 
-                dimensional analogues in a deep learning setting. My explorations of this topic can be found at, 
+                dimensional analogues in a deep learning setting. My explorations of this topic can be found at: 
                 <ul>
                     <li>
                         <a href="https://arxiv.org/pdf/2401.01306.pdf">“Learning solutions to some toy constrained optimization problems in infinite dimensional Hilbert spaces”</a>
@@ -117,8 +163,8 @@
     </div>
 
     <div class="row">
-        <div class="column middle">
-            <video controls class=videoInsert id="v11" src="assets/helicoid-evol.mp4"></video>
+        <div class="column single">
+            <video controls class=videoInsert src="assets/helicoid-evol.mp4"></video>
             <p>The helicoid, learned as a minimizer of an area integral with physics informed neural nets using two different constrained optimization techniques. Here the constraint 
                 $g$ is given by the boundary condition.
             </p>
@@ -126,8 +172,8 @@
     </div>
 
     <div class="row">
-        <div class="column middle">
-            <video controls class=videoInsert id="v11" src="assets/Beltrami-evol.mp4"></video>
+        <div class="column single">
+            <video controls class=videoInsert src="assets/Beltrami-evol.mp4"></video>
             <p>A Beltrami field, learned as a minimizer of an energy integral with appropriate boundary conditions using two different constrained optimization techniques.</p>
         </div>
     </div>
